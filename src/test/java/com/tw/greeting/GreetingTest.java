@@ -10,7 +10,7 @@ class GreetingTest {
     private Greeting greeting;
 
     @BeforeEach
-    void beforeEach(){
+    void beforeEach() {
         greeting = new Greeting();
     }
 
@@ -21,6 +21,11 @@ class GreetingTest {
 
     @Test
     void should_return_simple_greet_message_when_name_is_not_entered() {
-        assertEquals("Hello,my friend",greeting.greet(""));
+        assertEquals("Hello,my friend", greeting.greet(""));
+    }
+
+    @Test
+    void should_handle_shouting() {
+        assertEquals("HELLO,JERRY!", greeting.greet("JERRY"));
     }
 }
