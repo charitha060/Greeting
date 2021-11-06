@@ -1,19 +1,21 @@
 package com.tw.greeting;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GreetingTest {
 
+    private Greeting greeting;
+
+    @BeforeEach
+    void beforeEach(){
+        greeting = new Greeting();
+    }
+
     @Test
     void should_greet_user_with_name() {
-        Greeting greeting = new Greeting();
-
-        String expected = "Hello,Bob";
-        String actual = greeting.greet("Bob");
-
-        assertEquals(expected, actual);
-
+        assertEquals("Hello,Bob", greeting.greet("Bob"));
     }
 }
