@@ -15,7 +15,12 @@ class GreetingTest {
     }
 
     @Test
-    void should_greet_user_with_name() {
+    void should_greet_with_name() {
         assertEquals("Hello,Bob", greeting.greet("Bob"));
+    }
+
+    @Test
+    void should_return_simple_greet_message_when_name_is_not_entered() {
+        assertEquals("Hello,my friend",greeting.greet(""));
     }
 }
