@@ -1,25 +1,19 @@
 package com.tw.greeting;
 
-import java.util.Locale;
+import java.util.Arrays;
 
 public class Greeting {
 
-    public String greet(String name) {
-        String greetMessage = "Hello,";
+    String greetMessage = "Hello,";
 
-        if (name.equals(""))
-            return greetMessage + "my friend";
-        else if (isUpperCase(name))
-            return greetMessage.toUpperCase() + name + "!";
-        return greetMessage + name;
-    }
+    public String greet(String[] names) {
 
-    public static boolean isUpperCase(String name) {
-        for (int index = 0; index < name.length(); index++) {
-            if (!Character.isUpperCase(name.charAt(index))) {
-                return false;
-            }
+        for (String name : names) {
+            if (name.equals(""))
+                return greetMessage + "my friend";
+            else if (name.equals(name.toUpperCase()))
+                return greetMessage.toUpperCase() + name + "!";
         }
-        return true;
+        return greetMessage + Arrays.toString(Arrays.stream(names).toArray()).replace(",", " and ").replace('[', ' ').replace(']', ' ').trim();
     }
 }
