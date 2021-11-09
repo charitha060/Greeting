@@ -31,6 +31,6 @@ class GreetingTest {
 
     @Test
     void should_handle_two_names_of_input() {
-        assertEquals("Hello,Jill and Jane", greeting.greet(new String[]{"Jill,Jane"}));
+        assertEquals("Hello,Jill and Jane", greeting.greet(new String[]{"Jill", "Jane"}));
     }
 }
